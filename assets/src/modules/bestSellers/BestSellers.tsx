@@ -1,20 +1,8 @@
 import React from "react";
-import { API } from "aws-amplify";
+
 
 import BestSellerProductRow from "./BestSellerProductRow";
 import { CategoryNavBar } from "../category/categoryNavBar/CategoryNavBar";
-import { SearchBar } from "../search/searchBar/SearchBar";
-
-interface BestSellersProps {}
-
-interface BestSellersState {
-  isLoading: boolean;
-  books: { bookId: any; }[];
-}
-
-export default class BestSellers extends React.Component<BestSellersProps, BestSellersState> {
-  constructor(props: BestSellersProps) {
-    super(props);
 
     this.state = {
       isLoading: true,
