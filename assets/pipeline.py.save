@@ -1,0 +1,6 @@
+import subprocess
+import os
+
+cmd = 'ls'
+os.system(cmd)
+
