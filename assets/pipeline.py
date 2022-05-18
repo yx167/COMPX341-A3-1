@@ -1,14 +1,13 @@
 import subprocess
 import os
+import argparse
 
-
-'''
-cmd = 'ls'
-os.system(cmd)
-val = os.popen('pwd').read()
-print(val)
-'''
-
+parse = argparse.ArgumentParser()
+parse.add_argument('C_commit', type=ascii, help='input the commit text')
+args=parse.parse_args()
+#print(args.C_commit)
+commit = 'git commit -m ' +args.C_commit
+print(commit)
 
 
 os.system('npm install')
@@ -19,7 +18,7 @@ print(val)
 if val == 0:
 
         os.system('git add ../.')
-        commit = 'git commit -m'+' "COMPX341-22A-A3 Commiting from CI/CD Pipeline"'
+        #commit = 'git commit -m ' +'"COMPX341-22A-A3 Commiting from CI/CD Pipeline"'
         os.system(commit)
 
         os.system('git push -u origin main')
@@ -29,3 +28,5 @@ if val == 0:
 else:
         print('something wrong')
         os._exit(0)
+
+
