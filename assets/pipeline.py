@@ -2,6 +2,8 @@ import subprocess
 import os
 import argparse
 
+
+#check the input from user
 parse = argparse.ArgumentParser()
 parse.add_argument('C_commit', type=ascii, help='input the commit text')
 args=parse.parse_args()
@@ -10,6 +12,7 @@ commit = 'git commit -m ' +args.C_commit
 print(commit)
 
 
+#npm start 
 os.system('npm install')
 print('npm install successful')
 val = os.system('npm run build')
@@ -23,7 +26,7 @@ if val == 0:
 
         os.system('git push -u origin main')
         os.system('npm run start')
-        print(commit)
+        print('finish all')
 
 else:
         print('something wrong')
